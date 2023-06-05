@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <!-- Heading  -->
+      <div class="row">
+        <div class="col m-3">
+          <h1>
+            Daily Planner
+          </h1>
+        </div>
+      </div>
+      <!-- Date and year -->
+      <div class="row">
+        <!-- Month and year -->
+        <div class="col-sm-6 mb-4">
+          <label class="h6" for="dateInput">Select Date: </label>
+          <input class="border-bottom-input text-center pt-2" type="date" id="dateInput" onchange="formatDate(event)">
+
+        </div>
+        <!-- weekdays -->
+        <div class="col-sm-6 ">
+          <h6 class="h6 text-center p-3" type="text" id="formattedDateInput"></h6>
+        </div>
+      </div>
+      <!-- TIme and schedule table -->
+      <div class="row">
+        <div class="col-sm-6 col1">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Time ⏰</th>
+                <th scope="col" class="text-center">Schedule 🗒</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row" class="text-center align-middle">7:00 am ☀️</th>
+                <td contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center align-middle">8:00 am ☀️</th>
+                <td contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center align-middle">9:00 am ☀️</th>
+                <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+
+              </tr>
+              <th scope="row" class="text-center align-middle">10:00 am ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">11:00 am ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">12:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">1:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">2:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">3:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">4:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">5:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">6:00 pm ☀️</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">7:00 pm 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">8:00 pm 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">9:00 pm 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">10:00 pm 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">11:00 pm 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+              <th scope="row" class="text-center align-middle">12:00 am 🌙</th>
+              <td colspan="2" contenteditable="true" onkeydown="handleKeyPress(event)"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Content for the Right column -->
+        <div class="col-sm-6" style="height: 100vh;">
+          <div class="row row1 border border-secondary">
+            <!-- Text AreA -->
+            <div class="col p-0">
+              <div class="mb-3">
+                <div class="h3 text-center pt-2 pb-2 border-bottom border-secondary">Top PRIORITIES</div>
+                <textarea class="form-control border-0" id="exampleFormControlTextarea1" placeholder="Write Here..."
+                  rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- Content for the second row -->
+          <div class="row row2 mt-3 mb-3 border border-secondary">
+            <!-- Text AreA -->
+            <div class="col p-0">
+              <div class="mb-3">
+                <div class="h3 text-center pt-2 pb-2 border-bottom border-secondary">TO DO LIST</div>
+                <textarea class="form-control border-0" id="exampleFormControlTextarea1" placeholder="Write Here..."
+                  rows="5"></textarea>
+              </div>
+            </div>
+
+          </div>
+          <!-- Content for the third row -->
+          <div class="row row3 border border-secondary">
+            <!-- Text AreA -->
+            <div class="col p-0">
+              <div class="mb-3">
+                <div class="h3 text-center pt-2 pb-2 border-bottom border-secondary">NOTES</div>
+                <textarea class="form-control border-0" id="exampleFormControlTextarea1" placeholder="Write Here..."
+                  rows="5"></textarea>
+              </div>
+            </div>
+
+          </div>
+          <!-- Content for the fourth row -->
+          <div class="row row4 mt-3 border border-secondary">
+            <!-- Text AreA -->
+            <div class="col p-0">
+              <div class="mb-3">
+                <div class="h3 text-center pt-2 pb-2 border-bottom border-secondary">LIQUID TRACKER</div>
+                <div class="image-container"></div>
+                <div class="button-container text-center mt-4">
+                  <button class="add-button">+</button>
+                  <button class="remove-button">-</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="index.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+      </script>
+  </body>
+
+</html>

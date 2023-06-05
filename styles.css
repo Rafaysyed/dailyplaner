@@ -1,0 +1,68 @@
+.col1 {
+  height: 100%;
+}
+
+.row1 {
+  /* background-color: green; */
+  
+  height: 40%;
+}
+
+.row2 {
+  /* background-color: yellow; */
+  height: 40%;
+}
+
+.row3 {
+  /* background-color: red; */
+  height: 40%;
+}
+
+.row4 {
+  /* background-color: blue; */
+  height: 40%;
+}
+.border-bottom-input {
+  border: none;
+  border-bottom: 2px solid #818181;
+  outline: none;
+  width: 110px;
+}
+
+body > div > div > div.col-sm-6.col1 > table > thead > tr > th:nth-child(1){
+  width: 120px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.add-button,
+.remove-button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
