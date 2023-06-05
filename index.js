@@ -14,7 +14,6 @@ function formatDate(event) {
 // function handleKeyPress(event) {
 //   if (event.key === "Enter" || event.keyCode === 13) {
 //     event.preventDefault(); // Prevent the default Enter key behavior
-
 //     const selection = window.getSelection();
 //     const range = selection.getRangeAt(0);
 //     const listItem = document.createElement("li");
@@ -43,40 +42,6 @@ function formatDate(event) {
 //     }
 //   }
 // }
-
-
-
-function setCaretPosition(element, position) {
-  const range = document.createRange();
-  range.setStart(element.firstChild, position);
-  range.collapse(true);
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  selection.addRange(range);
-}
-
-function handleKeyPress(event) {
-  const td = event.target;
-  const currentCursorPosition = getCaretPosition(td);
-  const text = td.innerText;
-
-  if (event.key === "Enter" || event.keyCode === 13) {
-    event.preventDefault();
-    const newText =
-      text.slice(0, currentCursorPosition) +
-      "\n→ " +
-      text.slice(currentCursorPosition);
-    td.innerText = newText;
-    setCaretPosition(td, currentCursorPosition + 3);
-  } else if (event.key.length === 1) {
-    if (currentCursorPosition === 0) {
-      const newText = "→ " + text;
-      td.innerText = newText;
-      setCaretPosition(td, currentCursorPosition + 2);
-    }
-  }
-}
-
 
 // Functions for priorities and lists 
 
